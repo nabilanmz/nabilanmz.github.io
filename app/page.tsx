@@ -19,6 +19,7 @@ import {
   BLOG_POSTS,
   EMAIL,
   SOCIAL_LINKS,
+  INVOLVEMENT,
 } from './data'
 
 const VARIANTS_CONTAINER = {
@@ -138,8 +139,7 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Final-year interested in software and data engineering. I like
-            pretty interfaces.
+            Currently a software developer at <a href="https://www.lgm.gov.my" target="_blank" rel="noopener noreferrer">MRB</a> mainly crafting internal Angular/.NET web apps— I like pretty interfaces, and find satisfaction in realizing them.
           </p>
         </div>
       </motion.section>
@@ -169,6 +169,49 @@ export default function Personal() {
                 </p>
               </div>
             </div>
+          ))}
+        </div>
+      </motion.section>
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Experience</h3>
+        <div className="flex flex-col space-y-2">
+          {EXPERIENCE.map((job) => (
+            <a
+              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
+              href={job.link !== '' ? job.link : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={job.id}
+            >
+              <Spotlight
+                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+                size={64}
+              />
+              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+                <div className="relative flex w-full flex-row justify-between">
+                  <div>
+                    <h4 className="font-normal dark:text-zinc-100">
+                      {job.title}
+                    </h4>
+                    <p className="text-zinc-500 dark:text-zinc-400">
+                      {job.company}
+                    </p>
+                  </div>
+                  <p className="text-zinc-600 dark:text-zinc-400">
+                    {job.end ? (
+                      <>
+                        {job.start} - {job.end}
+                      </>
+                    ) : (
+                      <>{job.start}</>
+                    )}
+                  </p>
+                </div>
+              </div>
+            </a>
           ))}
         </div>
       </motion.section>
@@ -215,15 +258,15 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Extracurricular</h3>
+        <h3 className="mb-5 text-lg font-medium">Involvement</h3>
         <div className="flex flex-col space-y-2">
-          {EXPERIENCE.map((job) => (
+          {INVOLVEMENT.map((inv) => (
             <a
               className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              href={job.link !== '' ? job.link : undefined}
+              href={inv.link}
               target="_blank"
               rel="noopener noreferrer"
-              key={job.id}
+              key={inv.id}
             >
               <Spotlight
                 className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
@@ -233,19 +276,19 @@ export default function Personal() {
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
-                      {job.title}
+                      {inv.title}
                     </h4>
                     <p className="text-zinc-500 dark:text-zinc-400">
-                      {job.company}
+                      {inv.company}
                     </p>
                   </div>
                   <p className="text-zinc-600 dark:text-zinc-400">
-                    {job.end ? (
+                    {inv.end ? (
                       <>
-                        {job.start} - {job.end}
+                        {inv.start} - {inv.end}
                       </>
                     ) : (
-                      <>{job.start}</>
+                      <>{inv.start}</>
                     )}
                   </p>
                 </div>
@@ -255,10 +298,11 @@ export default function Personal() {
         </div>
       </motion.section>
 
+
       {/* <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
-      >
+        >
         <h3 className="mb-3 text-lg font-medium">Blog</h3>
         <div className="flex flex-col space-y-0">
           <AnimatedBackground

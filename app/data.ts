@@ -24,6 +24,15 @@ type Experience = {
   id: string
 }
 
+type Involvement = {
+  company: string
+  title: string
+  start: string
+  end: string
+  link: string
+  id: string
+}
+
 type BlogPost = {
   title: string
   description: string
@@ -77,8 +86,8 @@ export const EDUCATION: Education[] = [
   {
     institute: 'Multimedia University',
     title: 'Bachelor of Computer Science (Hons) (Data Science)',
-    start: 'Oct 2022',
-    end: 'Oct 2025',
+    start: 'Nov 2022',
+    end: 'Nov 2025',
     link: 'https://www.mmu.edu.my/',
     id: 'edu1',
   },
@@ -90,16 +99,43 @@ export const EDUCATION: Education[] = [
     link: 'https://42kl.edu.my/',
     id: 'edu2',
   },
+  {
+    institute: '42 Kuala Lumpur',
+    title: 'C Piscine',
+    start: 'Jul 2021',
+    end: 'Aug 2021',
+    link: 'https://42kl.edu.my/',
+    id: 'edu3',
+  },
 ]
 
 export const EXPERIENCE: Experience[] = [
+  {
+    company: 'Malaysian Rubber Board',
+    title: 'Information Technology Officer (Software Development)',
+    start: 'Apr 2026',
+    end: 'Present',
+    link: '',
+    id: 'work1',
+  },
+  {
+    company: 'Malaysian Rubber Board',
+    title: 'Industrial Trainee (Software Development)',
+    start: 'Aug 2025',
+    end: 'Dec 2025',
+    link: '',
+    id: 'work2',
+  },
+]
+
+export const INVOLVEMENT: Involvement[] = [
   {
     company: 'CodeNection 2024',
     title: 'Closed Category Participant',
     start: 'Nov 2024',
     end: '',
     link: '',
-    id: 'work1',
+    id: 'inv1',
   },
   {
     company: 'CodeNection 2023',
@@ -107,7 +143,7 @@ export const EXPERIENCE: Experience[] = [
     start: 'Sep 2023',
     end: 'Dec 2023',
     link: '',
-    id: 'work2',
+    id: 'inv2',
   },
   {
     company: 'IT Society MMU Cyberjaya',
@@ -115,7 +151,7 @@ export const EXPERIENCE: Experience[] = [
     start: 'Mar 2023',
     end: 'Feb 2024',
     link: '',
-    id: 'work3',
+    id: 'inv3',
   },
 ]
 
