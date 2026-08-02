@@ -263,7 +263,7 @@ export default function Personal() {
           {INVOLVEMENT.map((inv) => (
             <a
               className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              href={inv.link}
+              href={inv.link !== '' ? inv.link : undefined}
               target="_blank"
               rel="noopener noreferrer"
               key={inv.id}
