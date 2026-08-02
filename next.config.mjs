@@ -5,7 +5,6 @@ const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   output: 'export',
-  basePath: '/portfolio',
   images: { unoptimized: true },
 };
 
